@@ -1,11 +1,40 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import Sidebar from './Sidebar'
 import Navbar from './Navbar'
-import { Outlet } from 'react-router-dom'
+import { Outlet,useNavigate } from 'react-router-dom'
+
 
 const Layout = () => {
+  const navigate = useNavigate()
+  const [loading,setLoading] = useState(true)
+
+  useEffect(() => {
+    
+     const user = JSON.parse( localStorage.getItem('user'))
+
+
+     if(!user ||  user.role !== 'ADMIN'){
+        navigate('/login')
+     }
+     else{
+      setLoading(false)
+     }
+
+
+
+  
+    
+  }, [])
+  
+  if(loading){
+    return (
+    <h1> Loading.....  </h1>
+    )
+  }
+
+
   return (
-     <div className="grid grid-cols-8  w-dvw h-dvh ">
+     <div className="grid grid-cols-8   w-dvw h-dvh ">
     {/* sidebar */}
     <Sidebar/>
     <div className="w-full h-full col-span-7">
