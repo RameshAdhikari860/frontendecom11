@@ -54,7 +54,6 @@ const EditProduct = () => {
     const handleImage =  (e)=>{
         setImage(e.target.files[0])
        
-
     }
 
 

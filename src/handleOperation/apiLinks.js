@@ -10,6 +10,7 @@ export const apiLinks = {
     login : '/auth/login',
     createProduct : '/product/createProduct'
 
+
 }
 
 

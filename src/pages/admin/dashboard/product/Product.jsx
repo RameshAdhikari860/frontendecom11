@@ -60,9 +60,6 @@ const Product = () => {
 
 
           {formData.map((product,index) => (
-
-
-
             <tr className="border-b" key={product._id}>
               <td className="px-6 py-1.5 whitespace-nowrap text-sm">{index + 1}</td>
               <td className="px-6 py-1.5 whitespace-nowrap text-sm">

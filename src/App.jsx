@@ -7,6 +7,8 @@ import Login from "./pages/auth/Login";
 import CreateProduct from "./pages/admin/dashboard/product/createProduct";
 import EditProduct from "./pages/admin/dashboard/product/EditProduct";
 import Home from "./pages/user/Home";
+import ProductUser from "./pages/user/product/product";
+import SingleProduct from "./pages/user/product/SingleProduct";
 
 
 
@@ -29,6 +31,8 @@ const App = () => {
           </Route>
 
         <Route path="/login" element={<Login/>} />
+        <Route path="/product" element={<ProductUser/>}  />
+        <Route path="/product/:id" element={<SingleProduct/>} />
           
         </Routes>
       </BrowserRouter>
