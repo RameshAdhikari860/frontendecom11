@@ -9,7 +9,9 @@ import EditProduct from "./pages/admin/dashboard/product/EditProduct";
 import Home from "./pages/user/Home";
 import ProductUser from "./pages/user/product/product";
 import SingleProduct from "./pages/user/product/SingleProduct";
-
+import UserLayout from "./components/user/UserLayout";
+import Register from "./pages/auth/Register";
+import { ToastContainer} from "react-toastify";
 
 
 
@@ -21,8 +23,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
 
-          <Route path="/" element={<Home/>} />
-
+         
+         
           <Route path="/admin/" element={<Layout />}>
             <Route path="" element={<Dashboard />} />
             <Route path="product" element={<Product />} />
@@ -30,9 +32,17 @@ const App = () => {
             <Route path='editProduct/:id' element= {<EditProduct/>} /> 
           </Route>
 
+        <Route  element={<UserLayout/>} >
+            <Route path="/" element={<Home/>} />
+            <Route path="/product" element={<ProductUser/>}  />
+            <Route path="/product/:id" element={<SingleProduct/>} />
+        </Route>
+
+
         <Route path="/login" element={<Login/>} />
-        <Route path="/product" element={<ProductUser/>}  />
-        <Route path="/product/:id" element={<SingleProduct/>} />
+        <Route path="/register" element={<Register/>} />
+
+        
           
         </Routes>
       </BrowserRouter>
